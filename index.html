@@ -2,20 +2,23 @@
 <html lang="uk">
 
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
-        integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./css/styles.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Студія</title>
+    <title>&#13277;Студія</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
         rel="stylesheet">
-</head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+        integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./css/styles.css">
+    
 
 <body class="site-body">
     <!-- шапка сайту -->
@@ -111,11 +114,20 @@
                 <h2 class="we-work">Чим ми займаємося</h2>
                 <ul class="we-work-list list">
                     <li>
+                        <div class="we-do-container">
+                            <p class="we-do-text">Десктопні додатки</p>
                         <img src="./images/img1.jpg" alt="фото" width="370" height="295" />
+                    </div>
                     </li>
+                    <div class="we-do-container">
+                        <p class="we-do-text">Десктопні додатки</p>
                     <li><img src="./images/img2.jpg" alt="фото" width="370" height="295" />
+                    </div>
                     </li>
+                    <div class="we-do-container">
+                        <p class="we-do-text">Дизайнерські рішення</p>
                     <li><img src="./images/img3.jpg" alt="фото" width="370" height="295" />
+                    </div>
                     </li>
                 </ul>
             </div>
@@ -388,9 +400,85 @@
                         </li>
                     </ul>
                 </div>
+                <div class="footer-input-check">
+                    <p class="footer-label">Підпишіться на розсилку</p>
+                    <form name="footer-form" class="footer-form" action="#" autocomplete="off">
+                        <label>
+                            <input type="email" name="mail" placeholder="E-mail" class="foot-sub-form-mail"/>
+                        </label>
+                        <button class="footer-subscription main-button" type="submit">
+                            Підписатися
+                            <svg class="button-send-icon" width="24" height="24">
+                                <use href="./images/icomoon.svg#icon-send-sms"></use>
+                            </svg>
+                        </button>
+                    </form>
             </div>
         </div>
     </footer>
-</body>
+    <!------------Модальне вікно ---------------->
 
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <button type="button" class="modal-close" data-modal-close>
+                <svg class="modal-close-icon" width="18" height="18">
+                    <use href="./images/icomoon.svg#icon-close"></use>
+                </svg>
+            </button>
+            <!-- <p class="modal-name">Залиште свої дані, ми вам передзвонимо</p>
+            <form class="modal-form">
+                <div class="modal-field">
+                    <label for="user-name" class="inpul-label">Ім'я</label>
+                    <div class="input-wrap">
+                        <input type="text" name="user-name" class="modal-input" minlength="3" required id="user-name" />
+                        <svg class="modal-input-icon" width="18" height="18">
+                            <use href="./images/icons.svg#(експортувати картинку)"></use>
+                        </svg>
+                    </div>
+                </div>
+            
+                <div class="modal-label">
+                    <label for="user-tel" class="inpul-label">Телефон</label>
+                    <div class="input-wrap">
+                        <input type="tel" name="user-tel" class="modal-input" title="+380 (67) 111-11-11"
+                            pattern="[\+]\d{3}\s[\(]\d{2}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}" required id="user-tel" />
+                        <svg class="modal-input-icon" width="18" height="18">
+                            <use href="./images/icons.svg#(експортувати картинку)"></use>
+                        </svg>
+                    </div>
+                </div>
+            
+                <div class="modal-field">
+                    <label for="user-email" class="inpul-label">Пошта</label>
+                    <div class="input-wrap">
+                        <input type="email" name="user-email" class="modal-input" id="user-email" />
+                        <svg class="modal-input-icon" width="18" height="18">
+                            <use href="./images/icons.svg#(експортувати картинкуemail)"></use>
+                        </svg>
+                    </div>
+                </div>
+            
+                <div class="modal-field">
+                    <label for="user-comment" class="inpul-label">Коментар</label>
+                    <textarea name="user-comment" id="user-comment" class="modal-user-comment modal-input"
+                        placeholder="Введіть текст"></textarea>
+                </div>
+            
+                <div class="modal-field">
+                    <input type="checkbox" name="privacy" id="privacy" class="input-check hidden-header">
+                    <label for="privacy" class="check-text">
+                        <span>
+                            <svg class="check-icon" width="16" height="15">
+                                <use href="./images/icons.svg#(експортувати картинку)></use>
+                        </svg>
+                            </span>
+                            Погоджуюся з розсилкою та приймаю <a href=" #" class="contract-conditions">Умови договору</a></label>
+                </div>
+                <button type="submit" class="modal-send-button">Відправити</button>
+            </form> -->
+            </div>
+            </div>
+<!------------------Скріпти ------------------>
+<script src="./js/modal.js"></script>
+</body>
 </html>

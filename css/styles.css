@@ -323,6 +323,53 @@ img {
     fill: var(--secondary-accent-color);
 }
 
+.footer-input-check {
+    margin-left: auto;
+}
+
+.footer-label {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+}
+
+.footer-subscription {
+    width: 200px;
+    margin-left: 12px;
+    padding: 10px 28px;
+}
+
+.main-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: 0.06em;
+    color: var(--secondary-accent-color);
+    background-color: var(--accent-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border: 0px;
+    border-radius: 4px;
+    transition-property: background-color;
+    transition-duration: var(--transition-duration);
+    transition-timing-function: var(--transition-timing-function);
+    cursor: pointer;
+}
+
+.main-button:hover {
+    background-color: var(--hover-btn-color);
+}
+
+.button-send-icon {
+    margin-left: 10px;
+    fill: var(--secondary-accent-color);
+}
+
 /* Герой  індекс*/
 .overlay {
     background-color: var(--hero-bg-color);
@@ -462,6 +509,28 @@ img {
 .we-work-list {
     display: flex;
     gap: 30px;
+}
+
+.we-do-container {
+    position: relative;
+}
+
+.we-do-text {
+    position: absolute;
+    bottom: 0;
+    width: 370px;
+    height: 70px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    color: var(--secondary-accent-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(47, 48, 58, 0.8);
 }
 
 /* Наша команда */
@@ -683,12 +752,40 @@ img {
     gap: 30px;
 }
 
-.product-item {
+.port-product-list .product-item {
     flex-basis: calc((100% - 60px) / 3);
+
+    transition-property: box-shadow;
+    transition-duration: var(--transition-duration);
+    transition-timing-function: var(--transition-timing-function);
+}
+
+.product-item:hover .port-img-text {
+    transform: translateY(0);
+}
+
+.port-product-list .product-item:hover {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .card-link {
     display: block;
+}
+
+.port-img-text {
+    position: absolute;
+    top: 0;
+    padding: 63px 24px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+    color: var(--secondary-accent-color);
+    background-color: rgba(33, 150, 243, 0.9);
+    height: 100%;
+    transform: translateY(100%);
+    transition: transform var(--transition-duration) var(--transition-timing-function);
+    overflow: auto;
 }
 
 .card-link:hover,
@@ -733,4 +830,63 @@ img {
     color: var(--primary-text-color); */
 }
 
-/* футер зверху спільний */
+.port-img-text-cont {
+    position: relative;
+    overflow: hidden;
+}
+
+/*----------- МОДАЛЬНЕ ВІКНО -------------- */
+.backdrop {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    transition: opacity 250ms var(--timing-function), visibility 250ms var(--timing-function);
+}
+
+/* Стан коли модалка відкрита */
+.modal {
+    width: 528px;
+    min-height: 581px;
+    background-color: var(--secondary-accent-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+
+    transition: transform var(--transition-duration) var(--transition-timing-function);
+}
+
+/* Стан коли модалка закрита */
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.modal-close {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    fill: var(--hover-btn-color);
+
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
